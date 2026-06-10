@@ -1,0 +1,150 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1080" height="1920" viewBox="0 0 1080 1920">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#061b55"/>
+      <stop offset="0.42" stop-color="#082b7a"/>
+      <stop offset="1" stop-color="#021238"/>
+    </linearGradient>
+    <linearGradient id="cyan" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0" stop-color="#69f5ff"/>
+      <stop offset="1" stop-color="#1a8dff"/>
+    </linearGradient>
+    <linearGradient id="orange" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0" stop-color="#ff7a2b"/>
+      <stop offset="1" stop-color="#ffd15c"/>
+    </linearGradient>
+    <filter id="glow" x="-50%" y="-50%" width="200%" height="200%">
+      <feGaussianBlur stdDeviation="7" result="blur"/>
+      <feMerge>
+        <feMergeNode in="blur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+    <filter id="soft" x="-20%" y="-20%" width="140%" height="140%">
+      <feDropShadow dx="0" dy="10" stdDeviation="12" flood-color="#00133e" flood-opacity="0.6"/>
+    </filter>
+    <style>
+      .font{font-family:"Microsoft YaHei","PingFang SC","Noto Sans CJK SC",Arial,sans-serif}
+      .white{fill:#ffffff}
+      .muted{fill:#a9c8ff}
+      .cyan{fill:#72f5ff}
+      .orange{fill:#ffb34d}
+      .small{font-size:26px}
+      .body{font-size:30px}
+      .label{font-size:24px;letter-spacing:2px}
+      .title{font-size:118px;font-weight:900}
+      .subtitle{font-size:42px;font-weight:700}
+      .section{font-size:34px;font-weight:800}
+      .name{font-size:32px;font-weight:800}
+      .role{font-size:24px}
+    </style>
+  </defs>
+
+  <rect width="1080" height="1920" fill="url(#bg)"/>
+  <g opacity="0.28">
+    <path d="M0 312 C210 214 318 360 500 266 C680 173 798 204 1080 110 L1080 0 L0 0 Z" fill="#0d4db2"/>
+    <path d="M0 610 C150 552 318 583 504 493 C708 394 855 424 1080 340" fill="none" stroke="#45e8ff" stroke-width="3"/>
+    <path d="M0 636 C170 598 347 634 522 542 C718 438 876 475 1080 398" fill="none" stroke="#ff953a" stroke-width="3" opacity="0.8"/>
+  </g>
+
+  <g opacity="0.24" fill="#7fb9ff">
+    <rect x="64" y="246" width="18" height="134"/>
+    <rect x="102" y="204" width="24" height="176"/>
+    <rect x="146" y="274" width="18" height="106"/>
+    <rect x="778" y="188" width="22" height="192"/>
+    <rect x="820" y="244" width="28" height="136"/>
+    <rect x="868" y="154" width="18" height="226"/>
+    <rect x="910" y="292" width="24" height="88"/>
+  </g>
+
+  <g transform="translate(70 72)">
+    <text class="font label cyan" x="0" y="0">AI 向善国际行 · 上海普陀站</text>
+    <text class="font small muted" x="0" y="50">2026年5月19日 09:00-12:00</text>
+    <text class="font small muted" x="0" y="88">信泰中心 T1楼43层 “海聚英才”路演大厅</text>
+  </g>
+
+  <g transform="translate(70 220)">
+    <rect x="0" y="0" width="940" height="6" rx="3" fill="url(#cyan)" opacity="0.9"/>
+    <text class="font title white" x="0" y="148" filter="url(#glow)">沿沪宁汇科厅</text>
+    <text class="font subtitle white" x="4" y="220">工业AI时代下的全球开源新范式</text>
+    <text class="font body muted" x="4" y="274">汇聚全球开源人才 · 链接沪宁产业创新 · 共建普陀科创桥头堡</text>
+  </g>
+
+  <g transform="translate(70 560)" filter="url(#soft)">
+    <rect x="0" y="0" width="940" height="196" rx="22" fill="#08296a" stroke="#4bbdff" stroke-width="2" opacity="0.96"/>
+    <text class="font section white" x="42" y="58">普陀区沿沪宁产业创新带科创服务新场景</text>
+    <text class="font body muted" x="42" y="108">打造“引力场、智汇源、孵化器和服务中心”，吸引沿沪宁科创活动中</text>
+    <text class="font body muted" x="42" y="150">“人”的要素集聚普陀，让全球AI开源新范式在产业一线落地生长。</text>
+  </g>
+
+  <g transform="translate(70 812)">
+    <g>
+      <rect x="0" y="0" width="210" height="92" rx="14" fill="#0e3d8e" stroke="#6bf4ff"/>
+      <text class="font section cyan" x="38" y="58">引力场</text>
+    </g>
+    <g transform="translate(244 0)">
+      <rect x="0" y="0" width="210" height="92" rx="14" fill="#0e3d8e" stroke="#6bf4ff"/>
+      <text class="font section cyan" x="38" y="58">智汇源</text>
+    </g>
+    <g transform="translate(488 0)">
+      <rect x="0" y="0" width="210" height="92" rx="14" fill="#0e3d8e" stroke="#ffb34d"/>
+      <text class="font section orange" x="38" y="58">孵化器</text>
+    </g>
+    <g transform="translate(732 0)">
+      <rect x="0" y="0" width="208" height="92" rx="14" fill="#0e3d8e" stroke="#ffb34d"/>
+      <text class="font section orange" x="23" y="58">服务中心</text>
+    </g>
+  </g>
+
+  <g transform="translate(70 960)">
+    <rect x="0" y="0" width="940" height="3" fill="url(#orange)"/>
+    <text class="font section white" x="0" y="70">主讲嘉宾</text>
+    <g transform="translate(0 106)">
+      <circle cx="58" cy="58" r="58" fill="#144ba4" stroke="#69f5ff" stroke-width="3"/>
+      <text class="font white" x="33" y="70" font-size="42" font-weight="900">H</text>
+      <text class="font name white" x="140" y="36">Hunter Bown</text>
+      <text class="font role muted" x="140" y="76">DeepSeek-TUI 原创作者</text>
+      <text class="font role muted" x="140" y="114">分享：DeepSeek-TUI如何在工业领域发展</text>
+    </g>
+    <g transform="translate(0 256)">
+      <circle cx="58" cy="58" r="58" fill="#144ba4" stroke="#ffb34d" stroke-width="3"/>
+      <text class="font white" x="33" y="70" font-size="42" font-weight="900">高</text>
+      <text class="font name white" x="140" y="36">高智韬</text>
+      <text class="font role muted" x="140" y="76">IndustrialMind.AI 工业心智 CEO</text>
+      <text class="font role muted" x="140" y="114">分享：开源AI对于工业AI的深远影响和实践</text>
+    </g>
+  </g>
+
+  <g transform="translate(70 1348)">
+    <rect x="0" y="0" width="940" height="322" rx="22" fill="#06215b" stroke="#3da9ff" stroke-width="2" opacity="0.94"/>
+    <text class="font section white" x="42" y="62">活动议程</text>
+    <text class="font body white" x="42" y="116">09:00  开场仪式：“AI向善世界行计划”正式发布</text>
+    <text class="font body muted" x="42" y="166">09:30  主题演讲：DeepSeek-TUI 与工业AI落地</text>
+    <text class="font body muted" x="42" y="216">10:15  主题演讲：开源AI的工业实践与商业闭环</text>
+    <text class="font body muted" x="42" y="266">11:00  鲸鱼兄弟圆桌：开源AI在工业领域的发展问题及规划</text>
+  </g>
+
+  <g transform="translate(70 1712)">
+    <text class="font small muted" x="0" y="0">指导单位</text>
+    <text class="font body white" x="0" y="48">上海市普陀区科学家技术协会</text>
+    <text class="font small muted" x="0" y="102">拟邀对象：沿沪宁制造业上市公司负责人、AI转型负责人</text>
+    <text class="font small muted" x="0" y="144">长三角开源技术社区、AI意见领袖、DeepSeek-TUI 开发者</text>
+    <g transform="translate(820 -6)">
+      <rect x="0" y="0" width="140" height="140" rx="10" fill="#ffffff"/>
+      <rect x="16" y="16" width="30" height="30" fill="#061b55"/>
+      <rect x="94" y="16" width="30" height="30" fill="#061b55"/>
+      <rect x="16" y="94" width="30" height="30" fill="#061b55"/>
+      <rect x="60" y="20" width="16" height="16" fill="#061b55"/>
+      <rect x="80" y="44" width="16" height="16" fill="#061b55"/>
+      <rect x="58" y="68" width="36" height="16" fill="#061b55"/>
+      <rect x="104" y="72" width="16" height="16" fill="#061b55"/>
+      <rect x="62" y="104" width="16" height="16" fill="#061b55"/>
+      <rect x="84" y="100" width="36" height="16" fill="#061b55"/>
+    </g>
+  </g>
+
+  <g transform="translate(0 1870)">
+    <rect width="1080" height="50" fill="#f4f7ff"/>
+    <text class="font" x="70" y="32" font-size="20" fill="#53607a">天工开物开源基金会 · Industry Moment 工业时刻 · NextArch Foundation · Datawhale · DeepSeek-TUI 开源社区</text>
+  </g>
+</svg>

@@ -25,6 +25,7 @@ const db = require('./models');
 
 // 导入路由
 const authRoutes = require('./routes/auth.routes');
+const demoAuthRoutes = require('./routes/demo-auth.routes');
 const userRoutes = require('./routes/user.routes');
 const craneRoutes = require('./routes/crane.routes');
 const areaRoutes = require('./routes/area.routes');
@@ -57,7 +58,20 @@ const io = new Server(httpServer, {
 
 // 基础中间件
 app.use(helmet()); // 安全头设置
-app.use(cors(config.cors)); // 跨域配置
+
+// 添加详细的CORS日志
+app.use((req, res, next) => {
+  const origin = req.headers.origin;
+  console.log(`🔍 CORS请求: ${req.method} ${req.path} | 来源: ${origin}`);
+  next();
+});
+
+app.use(cors({
+  ...config.cors,
+  credentials: true,
+  allowedHeaders: ['Content-Type', 'Authorization', 'X-Requested-With', 'Accept', 'Origin', 'token']
+})); // 跨域配置
+
 app.use(compression()); // 响应压缩
 app.use(express.json({ limit: '10mb' })); // JSON 解析
 app.use(express.urlencoded({ extended: true, limit: '10mb' })); // URL 编码解析
@@ -80,7 +94,16 @@ app.get('/health', (req, res) => {
 });
 
 // API 路由注册
-app.use('/api/v1/auth', authRoutes);
+// 检查是否为演示模式，使用相应路由
+const isDemoMode = process.env.DEMO_MODE === 'true' || process.env.DB_DIALECT === 'sqlite';
+if (isDemoMode) {
+  app.use('/api/v1/auth', demoAuthRoutes);
+  console.log('🔧 演示模式：使用演示认证路由');
+} else {
+  app.use('/api/v1/auth', authRoutes);
+  console.log('🔧 生产模式：使用标准认证路由');
+}
+
 app.use('/api/v1/users', userRoutes);
 app.use('/api/v1/cranes', craneRoutes);
 app.use('/api/v1/areas', areaRoutes);
@@ -126,9 +149,23 @@ app.set('io', io);
 
 // 数据库连接测试
 async function testDatabaseConnection() {
-  if (process.env.DEMO_MODE !== 'false') {
-    logger.warn('DEMO_MODE 已启用，跳过数据库连接检查');
-    return;
+  // 检查是否为演示模式
+  const isDemoMode = process.env.DEMO_MODE === 'true' || process.env.DB_DIALECT === 'sqlite';
+  
+  if (isDemoMode) {
+    logger.warn('DEMO_MODE 已启用，使用SQLite演示数据库');
+    
+    try {
+      // 使用SQLite演示数据库
+      const { initDemoMode } = require('./demo-init');
+      await initDemoMode();
+      logger.info('演示模式数据库初始化完成');
+      return;
+    } catch (error) {
+      logger.error('演示模式数据库初始化失败:', error);
+      // 尝试回退到原始数据库连接
+      logger.info('尝试使用原始数据库连接...');
+    }
   }
 
   try {
@@ -136,13 +173,18 @@ async function testDatabaseConnection() {
     logger.info('数据库连接成功');
     
     // 同步模型（开发环境）
-    if (process.env.NODE_ENV === 'development') {
+    if (process.env.NODE_ENV === 'development' || process.env.DB_SYNC === 'true') {
       await db.sequelize.sync({ alter: true });
       logger.info('数据库模型同步完成');
     }
   } catch (error) {
     logger.error('数据库连接失败:', error);
-    process.exit(1);
+    // 如果是演示模式，尝试创建简单连接
+    if (isDemoMode) {
+      logger.error('演示模式数据库连接失败，系统可能无法正常工作');
+    } else {
+      process.exit(1);
+    }
   }
 }
 

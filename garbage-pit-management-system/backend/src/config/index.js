@@ -188,7 +188,7 @@ const config = {
     /** 允许的跨域来源 (多个用逗号分隔) */
     origin: process.env.CORS_ORIGIN 
       ? process.env.CORS_ORIGIN.split(',') 
-      : ['http://localhost:5173', 'http://localhost:3000'],
+      : ['http://localhost:5173', 'http://localhost:3000', 'http://localhost:8000', 'http://localhost:9528'],
     /** 允许的请求方法 */
     methods: (process.env.CORS_METHODS || 'GET,HEAD,PUT,PATCH,POST,DELETE').split(','),
     /** 允许的请求头 */

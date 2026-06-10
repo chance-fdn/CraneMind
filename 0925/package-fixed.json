@@ -12,7 +12,6 @@
     "test:unit": "vue-cli-service test:unit"
   },
   "dependencies": {
-    "@cycjimmy/jsmpeg-player": "^6.1.2",
     "@jiaminghi/data-view": "^2.10.0",
     "@tweenjs/tween.js": "^21.0.0",
     "axios": "^1.6.0",
@@ -25,15 +24,9 @@
     "flv.js": "^1.6.2",
     "js-base64": "^3.7.3",
     "js-cookie": "^3.0.1",
-    "jsmpeg-player": "^3.0.3",
-    "large-screen-for-vue": "^1.0.0",
-    "mockjs": "^1.1.0",
     "normalize.css": "^8.0.1",
     "nprogress": "^0.2.0",
-    "path-browserify": "^1.0.1",
-    "path-to-regexp": "^8.4.2",
     "screenfull": "^5.2.0",
-    "script-ext-html-webpack-plugin": "^2.1.5",
     "three": "^0.154.0",
     "three-orbit-controls": "^82.1.0",
     "vue": "^2.7.14",

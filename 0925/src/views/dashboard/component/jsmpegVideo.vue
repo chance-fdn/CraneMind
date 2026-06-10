@@ -5,7 +5,7 @@
 </template>
 
 <script>
-import JSMpeg from 'jsmpeg-player'
+import JSMpeg from '@cycjimmy/jsmpeg-player'
 export default {
   props: {
     rtsp: {
